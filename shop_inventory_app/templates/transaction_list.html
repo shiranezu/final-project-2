@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Transaction List</h1>
+    <ul>
+        {% for transaction in transactions %}
+            <li>
+                Transaction ID: {{ transaction.transaction_id }}<br>
+                Total Amount: ${{ transaction.total_amount }}<br>
+                Items:
+                <ul>
+                    {% for item in transaction.items.all %}
+                        <li>{{ item.name }} - ${{ item.price }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_transaction' %}">Create Transaction</a>
+
+</body>
+</html>
