@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>user link page</title>
     <style>
         * {box-sizing: border-box;
         }
@@ -15,6 +15,7 @@
             color:  rgb(100, 255, 105);
             text-align: center;
             
+
         }
         form{
             
@@ -60,19 +61,20 @@
         }
         a{
             color:  rgb(100, 255, 105);
-            margin: 50px;
             
         }
     </style>
 </head>
 <body>
-    <h1>Item List</h1>
-    <ul>
-        {% for item in items %}
-            <li>{{ item.name }} - ${{ item.price }}</li>
-        {% endfor %}
-    </ul>
+    <h2>WELCOME USER!</h2>
+    <br>
+    <p>what will you like to do as of now:</p>
+    <a href="{% url 'item_list' %}"> Item List</a>
+    <br>
     <a href="{% url 'add_item' %}">Add Item</a>
-
+    <br>
+    <a href="{% url 'create_transaction' %}">create_transaction</a>
+    <br>
+    <a href="{% url 'transaction_list' %}">transaction_list</a>
 </body>
 </html>

@@ -34,5 +34,8 @@ def transaction_list(request):
     transactions = Transaction.objects.all()
     return render(request, 'transaction_list.html', {'transactions': transactions})
 
+def Home(request):
+    return render(request, 'welcome.html')
+
 
 # Create your views here.
