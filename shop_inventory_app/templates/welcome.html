@@ -51,7 +51,7 @@
             background-color: rgb(100, 255, 105);
             color:#050506;
         }
-        h1 {
+        h2 {
             color:  rgb(100, 255, 105);
             font-family: Arial, Helvetica, sans-serif;
             text-decoration: overline;
@@ -69,12 +69,12 @@
     <h2>WELCOME USER!</h2>
     <br>
     <p>what will you like to do as of now:</p>
-    <a href="{% url 'item_list' %}"> Item List</a>
+    <li><a href="{% url 'item_list' %}"> view available Items</a></li>
     <br>
-    <a href="{% url 'add_item' %}">Add Item</a>
+    <li><a href="{% url 'add_item' %}">Add items and prices</a></li>
     <br>
-    <a href="{% url 'create_transaction' %}">create_transaction</a>
+    <li><a href="{% url 'create_transaction' %}">create a transaction</a></li>
     <br>
-    <a href="{% url 'transaction_list' %}">transaction_list</a>
+    <li><a href="{% url 'transaction_list' %}">view transaction record</a></li>
 </body>
 </html>
