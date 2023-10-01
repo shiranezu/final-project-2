@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user link page</title>
     <style>
-        * {box-sizing: border-box;
-        }
+        
         body{
-         
             background-color: #000000;
             font-family: Tahoma,Verdana,Segoe,sans-serif; 
             font-size: 20px;
             color:  rgb(100, 255, 105);
             text-align: center;
             
+         * {box-sizing: border-box;
+        }   
 
         }
         form{
@@ -66,9 +66,10 @@
     </style>
 </head>
 <body>
+    
     <h2>WELCOME USER!</h2>
     <br>
-    <p>what will you like to do as of now:</p>
+    <p>please select available links</p>
     <li><a href="{% url 'item_list' %}"> view available Items</a></li>
     <br>
     <li><a href="{% url 'add_item' %}">Add items and prices</a></li>
@@ -76,5 +77,6 @@
     <li><a href="{% url 'create_transaction' %}">create a transaction</a></li>
     <br>
     <li><a href="{% url 'transaction_list' %}">view transaction record</a></li>
+   
 </body>
 </html>

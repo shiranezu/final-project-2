@@ -50,6 +50,7 @@ def register(request):
             return redirect('welcome.html')
     return render(request, 'auth/signup.html', {'form': form})
 
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -63,6 +64,9 @@ def login_user(request):
             login(request, user)
             return redirect('/')
     return render(request, 'auth/login.html')
+
+
+
 
 
 # Create your views here.
