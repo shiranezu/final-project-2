@@ -7,76 +7,62 @@
     <style>
         
         body{
-            background-color: #000000;
+            background-image: url(wall.jpg);
+            background-color: #ffd4d4;
+            color:  rgb(45, 22, 1); 
+        }
+        
+        .header h1 {
+            /* font-family: Arial, Helvetica, sans-serif; */
+            text-align: center;
+            font-size: 60px;
+            text-decoration: underline;
+        }
+        .links a{
+            color: rgb(45, 22, 1);
+            float: right;
+            padding: 29px 31px;
+            text-decoration: overline;
             font-family: Tahoma,Verdana,Segoe,sans-serif; 
             font-size: 20px;
-            color:  rgb(100, 255, 105);
-            text-align: center;
-            
-         * {box-sizing: border-box;
-        }   
-
-        }
-        form{
-            
-            padding: 45px;
-            padding-right: 45px;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            background-color:#000000;
-            max-width: 360px;
-            margin: 0 auto 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-style: solid;
-            border-color: rgb(100, 255, 105);
-            border-width: 5px;
             
         }
-        input{
-            width: 100%;
-            border: none;
-            background: transparent;
-            line-height: 2em;
-            border-bottom: 3px solid rgb(100, 255, 105);
-            color: #666;
+        .links a:hover {
+        background-color:#cfa9a9;
+        color: rgb(45, 22, 1);
+        width: 200px;
+        border-radius: 60px;
         }
 
-        button{
-            height: 25px;
-            width: 100px;
-            font-family: "roboto", sans-serif;
-            cursor: pointer;
-            background-color: rgb(100, 255, 105);
-            color:#050506;
-        }
-        h2 {
-            color:  rgb(100, 255, 105);
-            font-family: Arial, Helvetica, sans-serif;
-            text-decoration: overline;
-            margin: 12px;
-            text-align: center;
-            margin: 30px;
-        }
-        a{
-            color:  rgb(100, 255, 105);
-            
-        }
     </style>
 </head>
 <body>
     
-    <h2>WELCOME USER!</h2>
-    <br>
-    <p>please select available links</p>
-    <li><a href="{% url 'item_list' %}"> view available Items</a></li>
-    <br>
-    <li><a href="{% url 'add_item' %}">Add items and prices</a></li>
-    <br>
-    <li><a href="{% url 'create_transaction' %}">create a transaction</a></li>
-    <br>
-    <li><a href="{% url 'transaction_list' %}">view transaction record</a></li>
-   
+    <div class="links">
+        <a href="{% url 'item_list' %}"> view available Items</a>
+    
+        <a href="{% url 'add_item' %}">Add items and prices</a>
+        
+        <a href="{% url 'create_transaction' %}">create a transaction</a>
+
+        <a href="{% url 'transaction_list' %}">transaction record</a>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="header">
+        <h1>WELCOME MANAGER!</h1>
+    </div>
+    <!-- <p>please select available links</p> -->
 </body>
 </html>

@@ -5,67 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {box-sizing: border-box;
-        }
+        
         body{
-         
-            background-color: #000000;
-            font-family: Tahoma,Verdana,Segoe,sans-serif; 
-            font-size: 24px;
-            color:  rgb(100, 255, 105);
-            
-
+            background-color: #ffd4d4;
+            color:  rgb(45, 22, 1); 
         }
-        form{
-            
-            padding: 45px;
-            padding-right: 45px;
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-            background-color:#000000;
-            max-width: 360px;
-            margin: 0 auto 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-style: solid;
-            border-color: rgb(100, 255, 105);
-            border-width: 5px;
-            
-        }
-        input{
-            width: 100%;
-            border: none;
-            background: transparent;
-            line-height: 2em;
-            border-bottom: 3px solid rgb(100, 255, 105);
-            color: #666;
-        }
-
-        button{
-            height: 25px;
-            width: 100px;
-            font-family: "roboto", sans-serif;
-            cursor: pointer;
-            background-color: rgb(100, 255, 105);
-            color:#050506;
-        }
+        
         h1 {
-            color:  rgb(100, 255, 105);
-            font-family: Arial, Helvetica, sans-serif;
-            text-decoration: overline;
-            margin: 12px;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-size: 30px;
+            text-decoration: underline;
             text-align: center;
-            margin: 30px;
         }
         a{
-            color:  rgb(100, 255, 105);
+            color: rgb(45, 22, 1);
+            float: left;
+            padding: 29px 31px;
+            text-decoration: underline;
+            font-family: Tahoma,Verdana,Segoe,sans-serif; 
+            font-size: 18px;
             
         }
+        a:hover {
+        background-color:#cfa9a9;
+        color: rgb(45, 22, 1);
+        width: 200px;
+        border-radius: 60px;
+        }
+        li {
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
     <h1>Transaction List</h1>
+    <br>
     <ul>
         {% for transaction in transactions %}
             <li>

@@ -4,11 +4,13 @@ from .models import Item, Transaction
 from .forms import ItemForm, TransactionForm, RegistrationForm
 from django.contrib.auth.decorators import login_required
 
-
+# item list
 def item_list(request):
     items = Item.objects.all()
     return render(request, 'item_list.html', {'items': items})
 
+# add item
+# @login_required(login_url='shop_inventory_app:login')
 def add_item(request):
     if request.method == 'POST':
         form = ItemForm(request.POST)
@@ -19,6 +21,7 @@ def add_item(request):
         form = ItemForm()
     return render(request, 'add_item.html', {'form': form})
 
+# create transaction
 def create_transaction(request):
     if request.method == 'POST':
         form = TransactionForm(request.POST)
@@ -33,24 +36,28 @@ def create_transaction(request):
         form = TransactionForm()
     return render(request, 'create_transaction.html', {'form': form})
 
+# view transaction list
 def transaction_list(request):
     transactions = Transaction.objects.all()
     return render(request, 'transaction_list.html', {'transactions': transactions})
 
+# homepage
+# @login_required(login_url='shop_inventory_app:login')
 def Home(request):
     return render(request, 'welcome.html')
 
+# register user
 def register(request):
     form = RegistrationForm
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('welcome.html')
+            return redirect('login')
     return render(request, 'auth/signup.html', {'form': form})
 
-
+# login
 def login_user(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -62,7 +69,7 @@ def login_user(request):
         user = authenticate(username = username, password = password)
         if user:
             login(request, user)
-            return redirect('/')
+            return redirect('home')
     return render(request, 'auth/login.html')
 
 
